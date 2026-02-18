@@ -6,7 +6,7 @@ PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 PRIVATE_KEY="$PROJECT_ROOT/keys/private.pem"
 
 # --- Configuration ---
-ISSUER="https://dorakemon.github.io/oidc-provider"
+ISSUER="https://dorakemon.github.io/oidc-provider-practice"
 AUDIENCE="sts.amazonaws.com"
 SUBJECT="admin"
 KID="key-1"

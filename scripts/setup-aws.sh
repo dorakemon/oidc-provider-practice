@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # --- Configuration ---
-ISSUER_URL="https://dorakemon.github.io/oidc-provider"
+ISSUER_URL="https://dorakemon.github.io/oidc-provider-practice"
 ROLE_NAME="oidc-self-hosted-role"
 SUBJECT="admin"
 
@@ -43,13 +43,13 @@ TRUST_POLICY=$(cat <<EOF
     {
       "Effect": "Allow",
       "Principal": {
-        "Federated": "arn:aws:iam::${ACCOUNT_ID}:oidc-provider/dorakemon.github.io/oidc-provider"
+        "Federated": "arn:aws:iam::${ACCOUNT_ID}:oidc-provider-practice/dorakemon.github.io/oidc-provider-practice"
       },
       "Action": "sts:AssumeRoleWithWebIdentity",
       "Condition": {
         "StringEquals": {
-          "dorakemon.github.io/oidc-provider:aud": "sts.amazonaws.com",
-          "dorakemon.github.io/oidc-provider:sub": "${SUBJECT}"
+          "dorakemon.github.io/oidc-provider-practice:aud": "sts.amazonaws.com",
+          "dorakemon.github.io/oidc-provider-practice:sub": "${SUBJECT}"
         }
       }
     }
